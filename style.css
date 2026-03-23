@@ -69,6 +69,7 @@ body::after {
   justify-content: space-between;
   padding: 0 24px;
   height: 52px;
+  position: relative;
 }
 
 .nav-left {
@@ -105,11 +106,10 @@ body::after {
   font-size: 11px;
   color: var(--muted);
   cursor: pointer;
-  max-width: 320px;
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 4px 8px;
   border-radius: 2px;
   transition: color 0.2s;
@@ -630,7 +630,7 @@ body::after {
 @media (max-width: 768px) {
   .nav { padding: 0 16px; height: 48px; }
   .nav-logo { font-size: 14px; }
-  .nav-ca { max-width: 140px; font-size: 9px; }
+  .nav-ca { font-size: 8px; }
   .nav-community-text { display: none; }
 
   .hero-title { letter-spacing: 4px; }
@@ -650,7 +650,7 @@ body::after {
 }
 
 @media (max-width: 480px) {
-  .nav-ca { max-width: 100px; }
+  .nav-ca { font-size: 7px; }
   .hero-subtitle { font-size: 14px; }
   .narrative-block p { font-size: 18px; }
   .terminal-body { padding: 16px 12px; }
