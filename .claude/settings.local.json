@@ -5,7 +5,13 @@
       "Bash(do echo:*)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)",
+      "Bash(git config:*)",
+      "Bash(gh repo:*)",
+      "Bash(vercel --yes --prod)",
+      "Bash(vercel --yes --prod --name inusider)",
+      "Bash(git push:*)"
     ]
   }
 }

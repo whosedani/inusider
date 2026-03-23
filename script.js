@@ -62,11 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   bgTable.textContent = tableText;
 
-  // ── Marquee duplication ──
-  const alertTrack = document.getElementById('alert-track');
-  const alertContent = alertTrack.innerHTML;
-  alertTrack.innerHTML = alertContent + alertContent;
-
   // ── Data rain (canvas) ──
   const canvas = document.getElementById('data-rain');
   const ctx = canvas.getContext('2d');
