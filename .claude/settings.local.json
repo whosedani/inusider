@@ -11,7 +11,11 @@
       "Bash(gh repo:*)",
       "Bash(vercel --yes --prod)",
       "Bash(vercel --yes --prod --name inusider)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(do identify:*)",
+      "Bash(done)",
+      "Bash(python3 -c \":*)",
+      "Bash(pip install:*)"
     ]
   }
 }
