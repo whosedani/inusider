@@ -475,12 +475,30 @@ body::after {
   margin: 0 auto;
 }
 
-.trending-embed {
-  max-width: 600px;
-  margin: 40px auto 0;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255,191,0,0.08);
+.trending-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  padding: 14px 32px;
+  border: 1px solid rgba(255,191,0,0.2);
+  border-radius: 8px;
+  background: rgba(255,191,0,0.04);
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-decoration: none;
+  transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.trending-link:hover {
+  background: rgba(255,191,0,0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 24px rgba(255,191,0,0.15);
+}
+.trending-link-icon {
+  font-size: 22px;
 }
 .proof-card {
   border-radius: 8px;
@@ -623,7 +641,7 @@ body::after {
   .narrative-block p { font-size: 20px; }
 
   .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .trending-embed { max-width: 100%; }
+  .trending-link { font-size: 12px; padding: 12px 24px; }
 
   .terminal-line { font-size: 12px; }
 
