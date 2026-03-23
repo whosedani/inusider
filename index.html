@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INUSIDER — He Knew Before You Did</title>
+  <meta name="description" content="INUSIDER — insider + inu. The leak is live. 0 buys. 108 sells. He knew everything.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="data-rain"></canvas>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <div class="nav-logo">
+      🐕 INUSIDER
+      <span class="nav-live"></span>
+    </div>
+  </div>
+  <div class="nav-ca" id="ca-display" title="Click to copy CA">
+    <span id="ca-value">Loading...</span>
+  </div>
+  <div class="nav-right">
+    <a class="nav-community" id="community-link" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      <span class="nav-community-text">COMMUNITY</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Toast -->
+<div class="toast" id="toast">CLASSIFIED.</div>
+
+<!-- SECTION I — THE LEAK -->
+<section class="hero">
+  <div class="hero-bg-table">
+    <div class="hero-bg-table-inner" id="bg-table"></div>
+  </div>
+
+  <div class="hero-content">
+    <img src="static/inusider.png" alt="INUSIDER" class="hero-inu">
+    <h1 class="hero-title">INUSIDER</h1>
+    <p class="hero-subtitle">insider + inu. he knew before you did.</p>
+    <a class="hero-buy-btn" id="buy-link" href="#" target="_blank" rel="noopener">Buy $INUSIDER</a>
+  </div>
+
+  <div class="alert-bar">
+    <div class="alert-track" id="alert-track">
+      <span class="alert-text">🚨 0 BUYS • 108 SELLS • INSIDERS DUMPING ALL ASSETS • $500M+ LIQUIDATED • 0 BUYS • 108 SELLS 🚨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION II — THE DATA -->
+<section class="data-section">
+  <div class="data-header">
+    <h2 class="data-title">INSIDER SELLS — LAST 72 HOURS</h2>
+    <div class="live-badge"><span class="live-dot"></span>LIVE</div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Insider</th>
+          <th>Role</th>
+          <th>Type</th>
+          <th>Shares</th>
+          <th>Value</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="ticker">NVDA</td><td>MARK A.</td><td>Director</td><td class="sell-type">SALE</td><td>1,700,000</td><td class="sell-value">$303,332,000</td><td>Mar 20</td></tr>
+        <tr><td class="ticker">APG</td><td>FRANKLIN M.</td><td>Director</td><td class="sell-type">SALE</td><td>3,000,000</td><td class="sell-value">$122,440,000</td><td>Mar 19</td></tr>
+        <tr><td class="ticker">SE</td><td>TAIXUE GROUP</td><td>Officer</td><td class="sell-type">SALE</td><td>1,326,052</td><td class="sell-value">$113,921,127</td><td>Mar 18</td></tr>
+        <tr><td class="ticker">TSLA</td><td>KIMBAL M.</td><td>Director</td><td class="sell-type">PROPOSED SALE</td><td>4,400,000</td><td class="sell-value">$1,100,000,000</td><td>Mar 18</td></tr>
+        <tr><td class="ticker">META</td><td>ZUCKERMAN M.</td><td>Chairman</td><td class="sell-type">SALE</td><td>1,200,000</td><td class="sell-value">$485,000,000</td><td>Mar 17</td></tr>
+        <tr><td class="ticker">AMZN</td><td>JASSY A.</td><td>CEO</td><td class="sell-type">SALE</td><td>850,000</td><td class="sell-value">$142,000,000</td><td>Mar 17</td></tr>
+        <tr><td class="ticker">AAPL</td><td>WILLIAMS J.</td><td>COO</td><td class="sell-type">PROPOSED SALE</td><td>600,000</td><td class="sell-value">$138,000,000</td><td>Mar 16</td></tr>
+        <tr><td class="ticker">MSFT</td><td>NADELLA S.</td><td>CEO</td><td class="sell-type">SALE</td><td>320,000</td><td class="sell-value">$134,000,000</td><td>Mar 16</td></tr>
+        <tr><td class="ticker">ORCL</td><td>ELLISON L.</td><td>CTO</td><td class="sell-type">SALE</td><td>1,800,000</td><td class="sell-value">$252,000,000</td><td>Mar 15</td></tr>
+        <tr><td class="ticker">GOOGL</td><td>PICHAI S.</td><td>CEO</td><td class="sell-type">SALE</td><td>22,500</td><td class="sell-value">$39,150,000</td><td>Mar 15</td></tr>
+        <tr><td class="ticker">CRM</td><td>BENIOFF M.</td><td>CEO</td><td class="sell-type">SALE</td><td>15,000</td><td class="sell-value">$4,430,000</td><td>Mar 14</td></tr>
+        <tr><td class="ticker">JPM</td><td>DIMON J.</td><td>CEO</td><td class="sell-type">SALE</td><td>133,639</td><td class="sell-value">$31,520,000</td><td>Mar 14</td></tr>
+        <tr><td class="ticker">COIN</td><td>ARMSTRONG B.</td><td>CEO</td><td class="sell-type">PROPOSED SALE</td><td>2,000,000</td><td class="sell-value">$90,000,000</td><td>Mar 13</td></tr>
+        <tr><td class="ticker">AMD</td><td>SU L.</td><td>CEO</td><td class="sell-type">SALE</td><td>200,000</td><td class="sell-value">$30,400,000</td><td>Mar 13</td></tr>
+      </tbody>
+    </table>
+    <div class="table-fade"></div>
+  </div>
+
+  <div class="data-totals">
+    TOTAL BUYS: <span class="total-buys">0</span> &nbsp;|&nbsp; TOTAL SELLS: <span class="total-sells">108</span>
+  </div>
+</section>
+
+<!-- SECTION III — HE KNEW -->
+<section class="narrative-section">
+  <div class="narrative-block"><p>Insiders don't sell at the top by accident.</p></div>
+  <div class="diamond">◆</div>
+  <div class="narrative-block"><p>They don't liquidate $500M on a hunch.</p></div>
+  <div class="diamond">◆</div>
+  <div class="narrative-block"><p>They know something. They always know.</p></div>
+  <div class="diamond">◆</div>
+  <div class="narrative-block"><p>0 buys. 108 sells. Read that again.</p></div>
+  <div class="diamond">◆</div>
+  <div class="narrative-block amber"><p>The inu saw it first.</p></div>
+</section>
+
+<!-- SECTION IV — TRENDING -->
+<section class="trending-section">
+  <div class="trending-header">
+    <h2 class="trending-title">#1 TRENDING ON X</h2>
+  </div>
+  <p class="trending-subtitle">"the insiders are selling. the inu is buying."</p>
+
+  <div class="proof-grid">
+    <div class="proof-card"><img src="static/proof/1.png" alt="Trending proof" loading="lazy"></div>
+    <div class="proof-card"><img src="static/proof/2.png" alt="Trending proof" loading="lazy"></div>
+    <div class="proof-card"><img src="static/proof/3.png" alt="Trending proof" loading="lazy"></div>
+    <div class="proof-card"><img src="static/proof/4.png" alt="Trending proof" loading="lazy"></div>
+    <div class="proof-card"><img src="static/proof/5.png" alt="Trending proof" loading="lazy"></div>
+    <div class="proof-card"><img src="static/proof/6.png" alt="Trending proof" loading="lazy"></div>
+    <div class="proof-card"><img src="static/proof/7.png" alt="Trending proof" loading="lazy"></div>
+    <div class="proof-card"><img src="static/proof/8.png" alt="Trending proof" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- SECTION V — GET INSIDE -->
+<section class="getinside-section">
+  <h2 class="getinside-title">GET INSIDE</h2>
+
+  <div class="terminal-box">
+    <div class="terminal-titlebar">
+      <span class="terminal-dot red"></span>
+      <span class="terminal-dot yellow"></span>
+      <span class="terminal-dot green"></span>
+    </div>
+    <div class="terminal-body">
+      <div class="terminal-line" data-delay="0">
+        <span class="terminal-cmd">$ install phantom</span>
+        <span class="terminal-comment">&nbsp;&nbsp;// your wallet. your edge.</span>
+      </div>
+      <div class="terminal-line" data-delay="500">
+        <span class="terminal-cmd">$ acquire SOL</span>
+        <span class="terminal-comment">&nbsp;&nbsp;// load the bag.</span>
+      </div>
+      <div class="terminal-line" data-delay="1000">
+        <span class="terminal-cmd">$ swap INUSIDER</span>
+        <span class="terminal-comment">&nbsp;&nbsp;// pump.fun. you're inside now.</span>
+      </div>
+      <div class="terminal-line" data-delay="1500">
+        <span class="terminal-cmd">$ hold</span>
+        <span class="terminal-comment">&nbsp;&nbsp;// they sold. you bought. who's the insider now?</span>
+        <span class="terminal-cursor"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="classified-text">[CLASSIFIED] inusider. on-chain.</p>
+  <div class="footer-inu">🐕</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

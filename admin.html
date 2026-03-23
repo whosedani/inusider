@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INUSIDER // ADMIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0C0C14;
+      color: #FFBF00;
+      font-family: 'Martian Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .panel {
+      width: 100%;
+      max-width: 520px;
+      border: 1px solid rgba(255,191,0,0.2);
+      border-radius: 4px;
+      padding: 32px;
+      background: rgba(12,12,20,0.8);
+    }
+    h1 {
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #4A5568;
+      margin-bottom: 6px;
+      margin-top: 20px;
+    }
+    label:first-of-type { margin-top: 0; }
+    input {
+      width: 100%;
+      background: rgba(255,191,0,0.04);
+      border: 1px solid rgba(255,191,0,0.15);
+      border-radius: 2px;
+      padding: 10px 12px;
+      color: #D4E0DB;
+      font-family: 'Martian Mono', monospace;
+      font-size: 12px;
+      outline: none;
+    }
+    input:focus { border-color: #FFBF00; }
+    input[type="password"] { color: #FFBF00; }
+    button {
+      width: 100%;
+      margin-top: 28px;
+      padding: 12px;
+      background: transparent;
+      border: 1px solid #FFBF00;
+      color: #FFBF00;
+      font-family: 'Martian Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    button:hover { background: rgba(255,191,0,0.1); }
+    .status {
+      margin-top: 16px;
+      font-size: 11px;
+      text-align: center;
+      min-height: 18px;
+    }
+    .status.ok { color: #2EC486; }
+    .status.err { color: #E63946; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>INUSIDER // ADMIN</h1>
+    <label>PASSWORD</label>
+    <input type="password" id="pw" placeholder="enter access key">
+    <label>CONTRACT ADDRESS</label>
+    <input type="text" id="ca" placeholder="CA">
+    <label>TWITTER URL</label>
+    <input type="text" id="twitter" placeholder="https://x.com/...">
+    <label>COMMUNITY URL</label>
+    <input type="text" id="community" placeholder="https://t.me/...">
+    <label>BUY URL</label>
+    <input type="text" id="buy" placeholder="https://pump.fun/...">
+    <button onclick="save()">UPDATE CONFIG</button>
+    <div class="status" id="status"></div>
+  </div>
+  <script>
+    const $ = id => document.getElementById(id);
+    const status = (msg, ok) => {
+      const el = $('status');
+      el.textContent = msg;
+      el.className = 'status ' + (ok ? 'ok' : 'err');
+    };
+
+    fetch('/api/config').then(r => r.json()).then(d => {
+      $('ca').value = d.ca || '';
+      $('twitter').value = d.twitter || '';
+      $('community').value = d.community || '';
+      $('buy').value = d.buy || '';
+    }).catch(() => status('Failed to load config', false));
+
+    async function save() {
+      const pw = $('pw').value;
+      if (!pw) return status('Password required', false);
+      try {
+        const r = await fetch('/api/config', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + pw
+          },
+          body: JSON.stringify({
+            ca: $('ca').value,
+            twitter: $('twitter').value,
+            community: $('community').value,
+            buy: $('buy').value
+          })
+        });
+        if (r.ok) status('CONFIG UPDATED', true);
+        else status('UNAUTHORIZED', false);
+      } catch { status('NETWORK ERROR', false); }
+    }
+  </script>
+</body>
+</html>
