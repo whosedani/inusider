@@ -469,8 +469,8 @@ body::after {
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -478,7 +478,7 @@ body::after {
   border-radius: 8px;
   border: 1px solid rgba(255,191,0,0.08);
   overflow: hidden;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   background: rgba(12,12,20,0.5);
   opacity: 0;
   transform: translateY(10px);
@@ -614,7 +614,7 @@ body::after {
   .narrative-section { padding: 60px 20px; }
   .narrative-block p { font-size: 20px; }
 
-  .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
   .terminal-line { font-size: 12px; }
 
